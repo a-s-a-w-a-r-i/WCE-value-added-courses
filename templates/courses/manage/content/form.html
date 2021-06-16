@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}
+  {% if object %}
+    Edit content "{{ object.title }}"
+  {% else %}
+    Add a new content
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+  <h1 style="text-align:center;">
+    {% if object %}
+      Edit content "{{ object.title }}"
+    {% else %}
+      Add a new content
+    {% endif %}
+  </h1>
+  <br><br>
+  <div class="module" style="border:1px solid grey;border-radius:8px;margin-left:470px;margin-right:500px;box-shadow: 10px 10px 5px grey;">
+    <h2>Course info</h2>
+    <form action="" method="post" enctype="multipart/form-data" style="margin-left:100px;">
+      {{ form.as_p }}
+      {% csrf_token %}
+      <p><input type="submit" value="Save content"></p>
+    </form>
+  </div>
+{% endblock %}

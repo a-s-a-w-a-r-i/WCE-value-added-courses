@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load socialaccount %}
+
+
+{% block content %}
+
+<br><br><br><br><br>
+<div style="border:1px solid grey;border-radius:8px;margin-left:550px;margin-right:500px;padding-bottom:50px;box-shadow: 10px 10px 5px grey;">
+<br>
+<h3 style="text-align: center;">Login</h3>
+
+<br><br>
+<div style="margin-left:100px;">
+
+<!--
+<a href="{% provider_login_url 'github' %}" >Your Account</a> -->
+
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Log In</button>
+
+</form>
+</div>
+</div>
+
+
+{% endblock content %}
